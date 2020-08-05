@@ -1,5 +1,5 @@
 from modules import app, cbpi
-from thread import start_new_thread
+from _thread import start_new_thread
 import logging
 import time
 import requests
@@ -12,7 +12,7 @@ def iftttKEY():
 	global ifttt_key
 	ifttt_key = cbpi.get_config_parameter("ifttt_key", None)
 	if ifttt_key is None:
-		print "INIT IFTTT KEY"
+		print("INIT IFTTT KEY")
 		try:
 			cbpi.add_config_parameter("ifttt_key", "", "text", "IFTTT Maker Key")
 		except:
@@ -22,7 +22,7 @@ def iftttEvent():
 	global ifttt_event
 	ifttt_event = cbpi.get_config_parameter("ifttt_event_name", None)
 	if ifttt_event is None:
-		print "INIT IFTTT EVENT NAME"
+		print("INIT IFTTT EVENT NAME")
 		try:
 			cbpi.add_config_parameter("ifttt_event_name", "", "text", "IFTTT Maker Event Name")
 		except:
